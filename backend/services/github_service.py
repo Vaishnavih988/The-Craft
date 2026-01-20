@@ -37,7 +37,8 @@ def parse_repo_url(repo_url: str) -> tuple[str, str]:
         if match:
             owner, repo = match.groups()
             # Remove .git suffix if present
-            repo = repo.rstrip('.git')
+            if repo.endswith('.git'):
+                repo = repo[:-4]
             return owner, repo
     
     raise ValueError(
