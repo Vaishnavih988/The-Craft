@@ -32,8 +32,8 @@ app.add_middleware(
 # Request/Response Models
 class AnalyzeRequest(BaseModel):
     """Request model for issue analysis"""
-    repo_url: str = Field(..., description="GitHub repository URL", example="https://github.com/facebook/react")
-    issue_number: int = Field(..., description="Issue number", example=123, gt=0)
+    repo_url: str = Field(..., description="GitHub repository URL", json_schema_extra={"example": "https://github.com/facebook/react"})
+    issue_number: int = Field(..., description="Issue number", gt=0, json_schema_extra={"example": 123})
 
 
 class IssueAnalysis(BaseModel):

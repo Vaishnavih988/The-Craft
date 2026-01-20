@@ -7,7 +7,7 @@ import json
 from typing import Dict, Any
 from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SecretStr
 
 
 # Define IssueAnalysis model here to avoid circular imports
@@ -33,7 +33,7 @@ def get_llm():
     return ChatOpenAI(
         model="gpt-4o-mini",  # Using GPT-4 for best results
         temperature=0.3,  # Lower temperature for more consistent outputs
-        api_key=api_key
+        api_key=SecretStr(api_key)
     )
 
 
@@ -151,7 +151,8 @@ async def analyze_issue_with_ai(issue_data: Dict[str, Any]) -> IssueAnalysis:
         
         # Get LLM response
         response = llm.invoke(messages)
-        response_text = response.content
+        # Convert content to string (it might be a list)
+        response_text = str(response.content) if isinstance(response.content, list) else response.content
         
         # Parse JSON response
         # Try to extract JSON if it's wrapped in markdown code blocks
