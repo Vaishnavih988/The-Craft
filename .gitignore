@@ -25,7 +25,7 @@
 # *.egg
 
 # # Environment variables
-# .env
+.env
 # .env.local
 
 # # IDE
