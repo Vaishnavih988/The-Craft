@@ -176,6 +176,11 @@ st.markdown("""
     /* Hide streamlit branding */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
+    
+    /* Hide Deploy button */
+    [data-testid="stToolbar"] {visibility: hidden;}
+    .stDeployButton {display: none;}
+    button[kind="header"] {display: none !important;}
 </style>
 """, unsafe_allow_html=True)
 
@@ -393,12 +398,12 @@ def main():
     example_clicked = None
     
     with col1:
-        if st.button("📘 React Issue", use_container_width=True):
-            example_clicked = ("https://github.com/facebook/react", 28324)
+        if st.button("📘 Node.js Issue", use_container_width=True):
+            example_clicked = ("https://github.com/nodejs/node", 1)
     
     with col2:
         if st.button("⚡ Next.js Issue", use_container_width=True):
-            example_clicked = ("https://github.com/vercel/next.js", 60000)
+            example_clicked = ("https://github.com/vercel/next.js", 1)
     
     with col3:
         if st.button("💻 VS Code Issue", use_container_width=True):
@@ -493,7 +498,7 @@ def main():
             Built with ❤️ using <strong>FastAPI</strong>, <strong>LangChain</strong>, <strong>OpenAI GPT-4</strong>, and <strong>Streamlit</strong>
         </p>
         <p style='font-size: 0.85rem; opacity: 0.8;'>
-            <a href='https://github.com/yourusername/github-issue-assistant' target='_blank' style='color: #667eea; text-decoration: none;'>
+            <a href='https://github.com/Vaishnavih988/The-Craft.git' target='_blank' style='color: #667eea; text-decoration: none;'>
                 View on GitHub →
             </a>
         </p>
@@ -553,9 +558,7 @@ def main():
         All analysis happens in real-time. We don't store any issue data.
         """)
         
-        st.markdown("---")
-        st.markdown("**Version:** 1.0.0")
-        st.markdown("**Status:** 🟢 Production Ready")
+
 
 
 if __name__ == "__main__":
