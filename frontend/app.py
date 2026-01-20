@@ -266,7 +266,7 @@ def display_analysis(analysis: dict):
     """, unsafe_allow_html=True)
     
     # Create tabs for different views
-    tab1, tab2, tab3 = st.tabs(["📊 Overview", "📄 Full Report", "💻 Raw JSON"])
+    tab1, tab2, tab3 = st.tabs(["📊 Overview", "� Full Report", "💻 Raw JSON"])
     
     with tab1:
         # Metrics row
@@ -324,7 +324,7 @@ def display_analysis(analysis: dict):
     
     with tab2:
         # Full detailed report
-        st.markdown("## 📋 Detailed Analysis Report")
+        st.markdown("## � Detailed Analysis Report")
         
         st.markdown(f"""
         <div class="card">
