@@ -38,8 +38,7 @@ An intelligent web application that analyzes GitHub issues using AI to provide s
 
 1. **Clone the repository**
    ```bash
-   git clone [https://github.com/yourusername/github-issue-assistant.git](https://github.com/Vaishnavih988/The-Craft.git)
-   cd The-Craft
+   git clone https://github.com/Vaishnavih988/The-Craft.git   cd The-Craft
    ```
 
 2. **Create a virtual environment**
